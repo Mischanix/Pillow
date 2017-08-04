@@ -394,6 +394,8 @@ extern int ImagingBitDecode(Imaging im, ImagingCodecState state,
 			    UINT8* buffer, int bytes);
 extern int ImagingEpsEncode(Imaging im, ImagingCodecState state,
 			    UINT8* buffer, int bytes);
+extern int ImagingEtcDecode(Imaging im, ImagingCodecState state,
+			    UINT8* buffer, int bytes);
 extern int ImagingFliDecode(Imaging im, ImagingCodecState state,
 			    UINT8* buffer, int bytes);
 extern int ImagingGifDecode(Imaging im, ImagingCodecState state,

@@ -3261,6 +3261,7 @@ static PyTypeObject PixelAccess_Type = {
 /* Decoders (in decode.c) */
 extern PyObject* PyImaging_BcnDecoderNew(PyObject* self, PyObject* args);
 extern PyObject* PyImaging_BitDecoderNew(PyObject* self, PyObject* args);
+extern PyObject* PyImaging_EtcDecoderNew(PyObject* self, PyObject* args);
 extern PyObject* PyImaging_FliDecoderNew(PyObject* self, PyObject* args);
 extern PyObject* PyImaging_GifDecoderNew(PyObject* self, PyObject* args);
 extern PyObject* PyImaging_HexDecoderNew(PyObject* self, PyObject* args);
@@ -3327,6 +3328,7 @@ static PyMethodDef functions[] = {
     {"bcn_decoder", (PyCFunction)PyImaging_BcnDecoderNew, 1},
     {"bit_decoder", (PyCFunction)PyImaging_BitDecoderNew, 1},
     {"eps_encoder", (PyCFunction)PyImaging_EpsEncoderNew, 1},
+    {"etc_decoder", (PyCFunction)PyImaging_EtcDecoderNew, 1},
     {"fli_decoder", (PyCFunction)PyImaging_FliDecoderNew, 1},
     {"gif_decoder", (PyCFunction)PyImaging_GifDecoderNew, 1},
     {"gif_encoder", (PyCFunction)PyImaging_GifEncoderNew, 1},

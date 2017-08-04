@@ -29,7 +29,7 @@ _IMAGING = ("decode", "encode", "map", "display", "outline", "path")
 _LIB_IMAGING = (
     "Access", "AlphaComposite", "Resample", "Bands", "BcnDecode", "BitDecode",
     "Blend", "Chops", "Convert", "ConvertYCbCr", "Copy", "Crc32", "Crop", "Dib",
-    "Draw", "Effects", "EpsEncode", "File", "Fill", "Filter", "FliDecode",
+    "Draw", "Effects", "EpsEncode", "EtcDecode", "File", "Fill", "Filter", "FliDecode",
     "Geometry", "GetBBox", "GifDecode", "GifEncode", "HexDecode", "Histo",
     "JpegDecode", "JpegEncode", "LzwDecode", "Matrix", "ModeFilter",
     "Negative", "Offset", "Pack", "PackDecode", "Palette", "Paste",

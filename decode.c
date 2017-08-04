@@ -405,6 +405,49 @@ PyImaging_BcnDecoderNew(PyObject* self, PyObject* args)
 
 
 /* -------------------------------------------------------------------- */
+/* ETC: Ericsson block-compressed texture format                        */
+/* -------------------------------------------------------------------- */
+
+PyObject*
+PyImaging_EtcDecoderNew(PyObject* self, PyObject* args)
+{
+    ImagingDecoderObject* decoder;
+
+    char* mode;
+    char* actual;
+    int n = 0;
+    int ystep = 1;
+    if (!PyArg_ParseTuple(args, "s|ii", &mode, &n, &ystep))
+        return NULL;
+
+    switch (n) {
+    case 1: /* ETC1 */
+    case 2: /* COMPRESSED_RGB8_ETC2 */
+    case 3: /* COMPRESSED_RGBA8_ETC2_EAC */
+        actual = "RGBA"; break;
+    default:
+        PyErr_SetString(PyExc_ValueError, "block compression type unknown");
+        return NULL;
+    }
+
+    if (strcmp(mode, actual) != 0) {
+        PyErr_SetString(PyExc_ValueError, "bad image mode");
+        return NULL;
+    }
+
+    decoder = PyImaging_DecoderNew(0);
+    if (decoder == NULL)
+        return NULL;
+
+    decoder->decode = ImagingEtcDecode;
+    decoder->state.state = n;
+    decoder->state.ystep = ystep;
+
+    return (PyObject*) decoder;
+}
+
+
+/* -------------------------------------------------------------------- */
 /* FLI                                                                  */
 /* -------------------------------------------------------------------- */
 
